@@ -1,0 +1,11 @@
+body {
+  padding-top: 70px;
+}
+
+.background-container {
+  scroll-behavior: smooth;
+  background: radial-gradient(circle at top, #1c1c24 0%, #0f0f11 100%);
+  min-height: 100vh;
+  height: fit-content;
+}
+

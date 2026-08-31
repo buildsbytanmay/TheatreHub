@@ -1,0 +1,39 @@
+.input-container {
+  position: relative;
+  text-align: left;
+  margin: 15px 0;
+}
+
+.input-container > label {
+  margin: 5px 0px;
+  color: aliceblue;
+}
+
+.input-container > input {
+  width: 100%;
+  padding: 10px 40px;
+  height: 50px;
+  background: rgba(30, 30, 30, 0.8);
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.input-container > input:focus {
+  outline: none;
+  background: rgba(40, 40, 40, 0.9);
+  border-color: #e50914;
+  box-shadow: 0 0 5px rgba(229, 9, 20, 0.3);
+}
+
+.input-container > .input-icon {
+  position: absolute;
+  color: wheat;
+  z-index: 2;
+  text-align: left;
+  top: 48px;
+  left: 15px;
+}
+

@@ -1,0 +1,28 @@
+.btn {
+  text-align: center;
+  display: block;
+  margin: 30px auto;
+  color: white;
+  padding: 15px 50px;
+  border: 0px;
+  border-radius: 4px;
+  background: #e50914;
+  cursor: pointer;
+  font-weight: 600;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 1px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover:not(:disabled) {
+  background: #f40612;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(229, 9, 20, 0.4);
+}
+
+.btn:disabled {
+  background: #555;
+  color: #888;
+  cursor: not-allowed;
+}
+

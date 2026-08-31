@@ -1,0 +1,216 @@
+.ico-btn {
+  z-index: 999;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+  border-radius: 50%;
+  color: white;
+}
+
+.ico-btn:hover {
+  background-color: rgba(255, 255, 255, 0.14);
+}
+
+.ico-btn__burger,
+.ico-btn__burger::before,
+.ico-btn__burger::after {
+  width: 20px;
+  height: 2px;
+  background: currentColor;
+  border-radius: 2px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ico-btn__burger::before {
+  content: "";
+  position: absolute;
+  transform: translateY(-6px);
+}
+
+.ico-btn__burger::after {
+  content: "";
+  position: absolute;
+  transform: translateY(6px);
+}
+
+.ico-btn.is-active .ico-btn__burger {
+  background: transparent;
+}
+
+.ico-btn.is-active .ico-btn__burger::before {
+  transform: rotate(-45deg);
+}
+
+.ico-btn.is-active .ico-btn__burger::after {
+  transform: rotate(45deg);
+}
+
+.ico-btn.is-active {
+  transform: rotate(360deg);
+}
+
+.nav-wrapper {
+  position: fixed;
+  height: 70px;
+  z-index: 9;
+  background: rgba(15, 15, 17, 0.85);
+  backdrop-filter: blur(10px);
+  top: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.nav-brand-container {
+  flex: 1;
+}
+
+.nav-brand {
+  color: #e50914;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 1px;
+}
+
+.nav-brand:hover {
+  color: #f40612;
+  text-decoration: none;
+}
+
+.desktop-nav {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+.desktop-nav .nav-link {
+  color: #e5e5e5;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.desktop-nav .nav-link:hover {
+  color: #fff;
+}
+
+.desktop-nav .nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background-color: #e50914;
+  transition: width 0.3s ease;
+}
+
+.desktop-nav .nav-link:hover::after {
+  width: 100%;
+}
+
+.mobile-only {
+  display: none !important;
+}
+
+@media only screen and (max-width: 768px) {
+  .desktop-nav {
+    display: none !important;
+  }
+  .mobile-only {
+    display: flex !important;
+  }
+}
+
+.nav {
+  margin: 30px 0;
+  list-style: none;
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  justify-content: start;
+  grid-column-gap: 25px;
+}
+
+.nav > li {
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 3px;
+}
+
+.slider {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -100px;
+  z-index: 888;
+  background: rgba(0, 0, 0, 1);
+  transition: 0.5s ease-in-out;
+  transform: translateY(-200vh);
+}
+
+.active {
+  transform: translateY(0);
+}
+
+.burger {
+  z-index: 999;
+  margin: auto 0 auto 20px;
+  cursor: pointer;
+}
+
+.list {
+  display: grid;
+  position: relative;
+  margin: 100px auto;
+  width: 400px;
+}
+
+@media only screen and (max-width: 720px) {
+  .list {
+    position: absolute;
+    width: 80%;
+  }
+}
+
+@keyframes listItemFade {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+.list > a {
+  opacity: 0;
+  color: #ccc;
+  padding: 20px 0 20px 0;
+  text-transform: capitalize;
+  list-style-type: none;
+  border-bottom: 2px solid transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.list > a:hover {
+  color: #fff;
+  border-bottom: 2px solid #e50914;
+}
+
