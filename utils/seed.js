@@ -464,7 +464,12 @@ const movies = [
 ];
 
 const seedDB = async () => {
-  await mongoose.connect(process.env.MONGO_URL, {
+  const dbUri = process.env.MONGO_URL || process.env.MONGODB_URI;
+  if (!dbUri) {
+    console.error("❌ Cannot seed: MONGO_URL or MONGODB_URI is not set!");
+    return;
+  }
+  await mongoose.connect(dbUri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });

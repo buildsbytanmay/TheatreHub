@@ -126,7 +126,16 @@ npm run dev
 
 ---
 
+## 🚀 Deployment
+
+TheatreHub is pre-configured for instant cloud deployment (Render, Railway, Docker, etc.).
+
+For comprehensive, step-by-step instructions on setting up MongoDB Atlas, Cloudinary, and deploying to Render or Railway with a single click, see the [Deployment Guide](DEPLOYMENT.md).
+
+---
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 Copyright (c) 2024 TheatreHub
+

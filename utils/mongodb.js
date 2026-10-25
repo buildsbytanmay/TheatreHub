@@ -1,14 +1,17 @@
 import mongoose from "mongoose";
-
 import dotenv from "dotenv";
 dotenv.config();
 
-mongoose
-  .connect(process.env.MONGO_URL, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
-  .then(() => console.log("MongoDb connected ..."))
-  .catch((err) => console.log(err));
+const dbUri = process.env.MONGO_URL || process.env.MONGODB_URI;
 
-console.log(process.env.MONGO_URL);
+if (!dbUri) {
+  console.error("❌ ERROR: Neither MONGO_URL nor MONGODB_URI is defined in environment variables!");
+} else {
+  mongoose
+    .connect(dbUri, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    })
+    .then(() => console.log("✅ MongoDB connected successfully"))
+    .catch((err) => console.error("❌ MongoDB connection error:", err.message));
+}

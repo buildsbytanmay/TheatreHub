@@ -7,6 +7,7 @@
   "scripts": {
     "setup": "npm install && npm run setup-frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\"",
+    "build": "npm run build-frontend",
     "start": "node server.js",
     "seed": "node utils/seed.js",
     "server": "cross-env PORT=5000 nodemon server.js",
@@ -51,6 +52,6 @@
     "supertest": "^7.2.2"
   },
   "engines": {
-    "node": "10.14.2"
+    "node": ">=18.0.0"
   }
 }

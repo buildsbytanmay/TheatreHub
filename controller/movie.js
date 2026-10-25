@@ -95,7 +95,7 @@ router.post(
       description,
       trailerLink,
       movieLength,
-      image: req.file ? req.file.path : "",
+      image: req.file && req.file.path ? req.file.path : "",
     });
     await newMovie.save();
     console.log("Movie saved successfully:", newMovie);
